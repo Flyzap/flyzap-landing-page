@@ -39,14 +39,15 @@ const DemoSection: React.FC = () => {
                 className="absolute inset-0 w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                frameBorder="0"
               ></iframe>
             )}
             
             {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-flyzap-black/80 to-transparent"></div>
+            <div className={`absolute inset-0 bg-gradient-to-t from-flyzap-black/80 to-transparent ${isVideoPlaying ? 'pointer-events-none opacity-0' : ''}`}></div>
             
             {/* Caption at the bottom */}
-            <div className="absolute bottom-0 left-0 w-full p-6">
+            <div className={`absolute bottom-0 left-0 w-full p-6 ${isVideoPlaying ? 'pointer-events-none opacity-0' : ''}`}>
               <h3 className="text-xl font-semibold mb-2">Demonstração completa da plataforma</h3>
               <p className="text-gray-400">Veja como configurar fluxos, automatizar atendimentos e aumentar conversões.</p>
             </div>
@@ -62,7 +63,7 @@ const DemoSection: React.FC = () => {
         
         {/* CTA buttons */}
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="sm:px-8">
+          <Button size="lg" className="sm:px-8" onClick={handleVideoPlay}>
             <Play size={16} className="mr-2" />
             Assistir em ação
           </Button>
@@ -157,4 +158,3 @@ const DemoSection: React.FC = () => {
 };
 
 export default DemoSection;
-
