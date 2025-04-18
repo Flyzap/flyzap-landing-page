@@ -1,26 +1,26 @@
-
 import React from 'react';
 import Container from '../components/Container';
 import Button from '../components/Button';
 import { ArrowDown } from 'lucide-react';
-
 const HeroSection: React.FC = () => {
   const scrollToNextSection = () => {
     const featuresSection = document.getElementById('features');
     if (featuresSection) {
-      featuresSection.scrollIntoView({ behavior: 'smooth' });
+      featuresSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center py-24 overflow-hidden">
+  return <section className="relative min-h-screen flex items-center py-24 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-flyzap-black to-flyzap-black-light opacity-80 z-0"></div>
       
       {/* Animated gradient background */}
       <div className="absolute top-0 left-0 right-0 h-1/2 z-0">
         <div className="absolute top-0 right-0 w-full h-full bg-flyzap-green/5 blur-3xl rounded-full animate-float"></div>
-        <div className="absolute bottom-0 left-0 w-3/4 h-full bg-flyzap-green/10 blur-3xl rounded-full transform -translate-x-1/4 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-0 left-0 w-3/4 h-full bg-flyzap-green/10 blur-3xl rounded-full transform -translate-x-1/4 animate-float" style={{
+        animationDelay: '2s'
+      }}></div>
       </div>
       
       <Container className="relative z-10 mt-16">
@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg">Quero testar o FlyZap</Button>
-              <Button variant="outline" size="lg">Agendar demonstração</Button>
+              <Button variant="outline" size="lg" className="py-0 my-0 mx-0">Agendar demonstração</Button>
             </div>
           </div>
           
@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
               </div>
               
               <div className="absolute bottom-0 right-0 w-3/5 h-[420px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform -rotate-3 hover:rotate-0 transition-transform">
-                <div className="w-full h-12 bg-gray-900 flex items-center px-4">
+                <div className="w-full h-12 bg-gray-900 flex items-center px-[16px] mx-0 my-0 py-0">
                   <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -89,7 +89,9 @@ const HeroSection: React.FC = () => {
                       <span className="text-sm text-flyzap-green">+24%</span>
                     </div>
                     <div className="w-full h-2 bg-gray-800 rounded-full">
-                      <div className="h-2 bg-flyzap-green rounded-full" style={{ width: '78%' }}></div>
+                      <div className="h-2 bg-flyzap-green rounded-full" style={{
+                      width: '78%'
+                    }}></div>
                     </div>
                   </div>
                   <div className="mb-4">
@@ -98,7 +100,9 @@ const HeroSection: React.FC = () => {
                       <span className="text-sm text-flyzap-green">+42%</span>
                     </div>
                     <div className="w-full h-2 bg-gray-800 rounded-full">
-                      <div className="h-2 bg-flyzap-green rounded-full" style={{ width: '65%' }}></div>
+                      <div className="h-2 bg-flyzap-green rounded-full" style={{
+                      width: '65%'
+                    }}></div>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mt-6">
@@ -116,7 +120,9 @@ const HeroSection: React.FC = () => {
               
               {/* Decoration elements */}
               <div className="absolute top-1/4 right-1/4 w-6 h-6 rounded-full bg-flyzap-green blur-sm animate-pulse"></div>
-              <div className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-flyzap-green/50 blur-sm animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-flyzap-green/50 blur-sm animate-pulse" style={{
+              animationDelay: '1s'
+            }}></div>
             </div>
 
             {/* Neon glow effect */}
@@ -130,8 +136,6 @@ const HeroSection: React.FC = () => {
           <ArrowDown className="text-flyzap-green" />
         </div>
       </Container>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
