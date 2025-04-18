@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Container from '../components/Container';
 import SectionHeading from '../components/SectionHeading';
@@ -22,7 +21,10 @@ const DemoSection: React.FC = () => {
         />
         
         <div className="mt-12 relative max-w-4xl mx-auto">
-          <div className="relative aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl group">
+          <div 
+            className="relative aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl group cursor-pointer"
+            onClick={handleVideoPlay}
+          >
             {!isVideoPlaying ? (
               <div className="absolute inset-0 bg-flyzap-black-light flex items-center justify-center">
                 <div 
