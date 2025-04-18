@@ -3,47 +3,22 @@ import Container from '../components/Container';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
 import { Play } from 'lucide-react';
-
 const DemoSection: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  
   const handleVideoPlay = () => {
     setIsVideoPlaying(true);
   };
-
-  return (
-    <section id="demo" className="section-padding bg-flyzap-black py-20">
+  return <section id="demo" className="section-padding bg-flyzap-black py-20">
       <Container>
-        <SectionHeading 
-          title="Veja o FlyZap em ação"
-          subtitle="Assista a uma demonstração de como o FlyZap trabalha para transformar seu atendimento e aumentar suas vendas."
-          centered
-        />
+        <SectionHeading title="Veja o FlyZap em ação" subtitle="Assista a uma demonstração de como o FlyZap trabalha para transformar seu atendimento e aumentar suas vendas." centered />
         
         <div className="mt-12 relative max-w-4xl mx-auto">
-          <div 
-            className="relative aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl group cursor-pointer"
-            onClick={handleVideoPlay}
-          >
-            {!isVideoPlaying ? (
-              <div className="absolute inset-0 bg-flyzap-black-light flex items-center justify-center">
-                <div 
-                  onClick={handleVideoPlay}
-                  className="w-20 h-20 rounded-full flex items-center justify-center bg-flyzap-green/20 hover:bg-flyzap-green/30 transition-colors cursor-pointer group-hover:scale-110 transform transition-transform"
-                >
+          <div className="relative aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl group cursor-pointer" onClick={handleVideoPlay}>
+            {!isVideoPlaying ? <div className="absolute inset-0 bg-flyzap-black-light flex items-center justify-center">
+                <div onClick={handleVideoPlay} className="w-20 h-20 rounded-full flex items-center justify-center bg-flyzap-green/20 hover:bg-flyzap-green/30 transition-colors cursor-pointer group-hover:scale-110 transform transition-transform">
                   <Play size={32} className="text-flyzap-green fill-flyzap-green ml-1" />
                 </div>
-              </div>
-            ) : (
-              <iframe
-                src="https://www.youtube.com/embed/r1mSRtMfpJo?autoplay=1&rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0"
-                title="FlyZap Demo"
-                className="absolute inset-0 w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                frameBorder="0"
-              ></iframe>
-            )}
+              </div> : <iframe src="https://www.youtube.com/embed/r1mSRtMfpJo?autoplay=1&rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0" title="FlyZap Demo" className="absolute inset-0 w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen frameBorder="0"></iframe>}
             
             {/* Overlay gradient */}
             <div className={`absolute inset-0 bg-gradient-to-t from-flyzap-black/80 to-transparent ${isVideoPlaying ? 'pointer-events-none opacity-0' : ''}`}></div>
@@ -81,19 +56,12 @@ const DemoSection: React.FC = () => {
             <p className="text-gray-300 mb-6">O FlyZap integra-se perfeitamente com WhatsApp, Instagram e seu site para oferecer uma experiência contínua para seus clientes, independentemente do canal que eles escolherem.</p>
             
             <ul className="space-y-4">
-              {[
-                'Respostas contextuais baseadas em histórico',
-                'Transferência inteligente para atendentes humanos',
-                'Personalização com base no perfil do cliente',
-                'Agendamentos e confirmações automáticas'
-              ].map((item, index) => (
-                <li key={index} className="flex items-start">
+              {['Respostas contextuais baseadas em histórico', 'Transferência inteligente para atendentes humanos', 'Personalização com base no perfil do cliente', 'Agendamentos e confirmações automáticas'].map((item, index) => <li key={index} className="flex items-start">
                   <div className="w-5 h-5 rounded-full bg-flyzap-green/20 flex items-center justify-center mr-3 mt-1">
                     <div className="w-2 h-2 rounded-full bg-flyzap-green"></div>
                   </div>
                   <span className="text-gray-300">{item}</span>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
           
@@ -143,7 +111,7 @@ const DemoSection: React.FC = () => {
                   </div>
                   
                   <div className="bg-white rounded-lg p-2 text-xs text-gray-800 shadow-sm self-start max-w-[80%]">
-                    <p>Ótimo! Agendei sua consulta para quarta, 22/04 às 10h com o Dr. Soares. Você receberá uma confirmação por email. Precisa de mais alguma coisa?</p>
+                    <p>Ótimo! Agendei sua consulta para quarta, 22/04 às 10h com o Dr. Soares. Você receberá uma confirmação aqui no Whatsapp e  por email. Precisa de mais alguma coisa?</p>
                     <p className="text-[10px] text-right text-gray-500">10:32</p>
                   </div>
                 </div>
@@ -155,8 +123,6 @@ const DemoSection: React.FC = () => {
           </div>
         </div>
       </Container>
-    </section>
-  );
+    </section>;
 };
-
 export default DemoSection;
