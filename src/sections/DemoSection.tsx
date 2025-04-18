@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Container from '../components/Container';
 import SectionHeading from '../components/SectionHeading';
@@ -16,14 +15,15 @@ const DemoSection: React.FC = () => {
         />
         
         <div className="mt-12 relative max-w-4xl mx-auto">
-          {/* Video container with mockup */}
+          {/* Video container with YouTube embed */}
           <div className="relative aspect-video rounded-xl overflow-hidden border border-gray-800 shadow-2xl group">
-            {/* Placeholder video thumbnail - replace with actual video or demo */}
-            <div className="absolute inset-0 bg-flyzap-black-light flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center bg-flyzap-green/20 hover:bg-flyzap-green/30 transition-colors cursor-pointer group-hover:scale-110 transform transition-transform">
-                <Play size={32} className="text-flyzap-green fill-flyzap-green ml-1" />
-              </div>
-            </div>
+            <iframe
+              src="https://www.youtube.com/embed/r1mSRtMfpJo?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0"
+              title="FlyZap Demo"
+              className="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
             
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-flyzap-black/80 to-transparent"></div>
