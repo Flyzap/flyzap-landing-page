@@ -1,8 +1,11 @@
+
 import React from 'react';
 import Container from '../components/Container';
 import Button from '../components/Button';
+
 const CtaSection: React.FC = () => {
-  return <section className="py-24 bg-flyzap-black relative overflow-hidden">
+  return (
+    <section className="py-24 bg-flyzap-black relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-t from-flyzap-green/5 to-transparent"></div>
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-flyzap-green/5 blur-3xl rounded-full transform translate-x-1/4 -translate-y-1/4"></div>
@@ -18,7 +21,7 @@ const CtaSection: React.FC = () => {
           </p>
           
           <div className="mb-8">
-            <Button size="lg" className="<button class=\"px-10 py-4 text-lg shadow-lg animate-pulse-neon [animation-duration:3s]\">\n">
+            <Button size="lg" className="px-10 py-4 text-lg shadow-lg animate-pulse-neon [animation-duration:3s]">
               Solicitar Demonstração Gratuita
             </Button>
           </div>
@@ -28,6 +31,8 @@ const CtaSection: React.FC = () => {
           </p>
         </div>
       </Container>
-    </section>;
+    </section>
+  );
 };
+
 export default CtaSection;
