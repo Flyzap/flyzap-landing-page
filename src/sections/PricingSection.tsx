@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Container from '../components/Container';
 import SectionHeading from '../components/SectionHeading';
@@ -61,16 +60,16 @@ const PricingSection: React.FC = () => {
           </div>
           
           {/* Comparison table */}
-          <div className="mt-16">
-            <h3 className="text-xl font-semibold mb-6 text-center">Comparativo: Antes x Depois do FlyZap</h3>
+          <div className="mt-16 overflow-x-auto -mx-6 md:mx-0">
+            <h3 className="text-xl font-semibold mb-6 text-center px-6">Comparativo: Antes x Depois do FlyZap</h3>
             
-            <div className="border border-gray-800 rounded-xl overflow-hidden">
+            <div className="border border-gray-800 rounded-xl overflow-hidden min-w-[600px] mx-6 md:mx-0">
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light"></th>
-                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-gray-400">Antes (Atendimento Tradicional)</th>
-                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-flyzap-green">Depois (Com FlyZap)</th>
+                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light w-1/3"></th>
+                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-gray-400 w-1/3">Antes (Atendimento Tradicional)</th>
+                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-flyzap-green w-1/3">Depois (Com FlyZap)</th>
                   </tr>
                 </thead>
                 <tbody>
