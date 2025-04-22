@@ -60,11 +60,25 @@ const PricingSection: React.FC = () => {
           </div>
           
           {/* Comparison table */}
-          <div className="mt-16 overflow-x-auto -mx-6 md:mx-0">
+          <div className="mt-16">
             <h3 className="text-xl font-semibold mb-6 text-center px-6">Comparativo: Antes x Depois do FlyZap</h3>
             
-            <div className="border border-gray-800 rounded-xl overflow-hidden min-w-[600px] mx-6 md:mx-0">
-              <table className="w-full">
+            {/* Wrapper responsivo para tabela */}
+            <div
+              className="
+                overflow-x-auto
+                scrollbar-thin
+                scrollbar-thumb-flyzap-green/40
+                scrollbar-track-transparent
+                rounded-xl
+                border border-gray-800
+                min-w-0
+                max-w-full
+                md:mx-0
+                px-1
+              "
+            >
+              <table className="w-full min-w-[600px]">
                 <thead>
                   <tr>
                     <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light w-1/3"></th>
@@ -101,9 +115,9 @@ const PricingSection: React.FC = () => {
                     }
                   ].map((row, index) => (
                     <tr key={index} className={index % 2 === 0 ? 'bg-flyzap-black-light/30' : ''}>
-                      <td className="p-4 border-b border-gray-800 font-medium">{row.aspect}</td>
-                      <td className="p-4 border-b border-gray-800 text-gray-400">{row.before}</td>
-                      <td className="p-4 border-b border-gray-800 text-white">{row.after}</td>
+                      <td className="p-4 border-b border-gray-800 font-medium whitespace-nowrap">{row.aspect}</td>
+                      <td className="p-4 border-b border-gray-800 text-gray-400 whitespace-nowrap">{row.before}</td>
+                      <td className="p-4 border-b border-gray-800 text-white whitespace-nowrap">{row.after}</td>
                     </tr>
                   ))}
                 </tbody>
