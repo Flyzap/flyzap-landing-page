@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Container from '../components/Container';
 import Button from '../components/Button';
 import { ArrowDown } from 'lucide-react';
+
 const HeroSection: React.FC = () => {
   const scrollToNextSection = () => {
     const featuresSection = document.getElementById('features');
@@ -41,8 +41,7 @@ const HeroSection: React.FC = () => {
           
           <div className="relative">
             <div className="relative w-full aspect-square sm:aspect-auto sm:h-[500px] animate-float">
-              {/* Mockup frames */}
-              <div className="absolute top-0 left-0 w-3/4 h-[320px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform rotate-6 hover:rotate-3 transition-transform z-10">
+              <div className="absolute top-0 left-0 w-3/4 h-[320px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform rotate-6 hover:rotate-3 transition-transform z-0">
                 <div className="w-full h-10 bg-gray-900 flex items-center px-4">
                   <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
@@ -73,7 +72,7 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
               
-              <div className="absolute bottom-0 right-0 w-3/5 h-[420px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform -rotate-3 hover:rotate-0 transition-transform">
+              <div className="absolute bottom-0 right-0 w-3/5 h-[420px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform -rotate-3 hover:rotate-0 transition-transform z-0">
                 <div className="w-full h-12 bg-gray-900 flex items-center px-[16px] mx-0 my-0 py-0">
                   <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
@@ -119,19 +118,16 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
               
-              {/* Decoration elements */}
               <div className="absolute top-1/4 right-1/4 w-6 h-6 rounded-full bg-flyzap-green blur-sm animate-pulse"></div>
               <div className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-flyzap-green/50 blur-sm animate-pulse" style={{
               animationDelay: '1s'
             }}></div>
             </div>
 
-            {/* Neon glow effect */}
             <div className="absolute inset-0 bg-flyzap-green/5 blur-3xl rounded-full"></div>
           </div>
         </div>
         
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer" onClick={scrollToNextSection}>
           <span className="text-gray-400 text-sm mb-2">Saiba mais</span>
           <ArrowDown className="text-flyzap-green" />
