@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Container from '../components/Container';
 import SectionHeading from '../components/SectionHeading';
@@ -63,27 +64,23 @@ const PricingSection: React.FC = () => {
           <div className="mt-16">
             <h3 className="text-xl font-semibold mb-6 text-center px-6">Comparativo: Antes x Depois do FlyZap</h3>
             
-            {/* Wrapper responsivo para tabela */}
+            {/* Responsivo: SEM rolagem horizontal, ajusta a tabela para caber */}
             <div
               className="
-                overflow-x-auto
-                scrollbar-thin
-                scrollbar-thumb-flyzap-green/40
-                scrollbar-track-transparent
-                rounded-xl
+                w-full
                 border border-gray-800
-                min-w-0
+                rounded-xl
+                bg-flyzap-black-light
+                overflow-hidden
                 max-w-full
-                md:mx-0
-                px-1
               "
             >
-              <table className="w-full min-w-[600px]">
+              <table className="w-full text-base sm:text-base text-sm [font-variant-numeric:proportional-nums]">
                 <thead>
                   <tr>
-                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light w-1/3"></th>
-                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-gray-400 w-1/3">Antes (Atendimento Tradicional)</th>
-                    <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-flyzap-green w-1/3">Depois (Com FlyZap)</th>
+                    <th className="p-2 sm:p-4 text-left border-b border-gray-800 bg-flyzap-black-light w-1/3 text-xs sm:text-base"></th>
+                    <th className="p-2 sm:p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-gray-400 w-1/3 text-xs sm:text-base">Antes (Atendimento Tradicional)</th>
+                    <th className="p-2 sm:p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-flyzap-green w-1/3 text-xs sm:text-base">Depois (Com FlyZap)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -115,14 +112,26 @@ const PricingSection: React.FC = () => {
                     }
                   ].map((row, index) => (
                     <tr key={index} className={index % 2 === 0 ? 'bg-flyzap-black-light/30' : ''}>
-                      <td className="p-4 border-b border-gray-800 font-medium whitespace-nowrap">{row.aspect}</td>
-                      <td className="p-4 border-b border-gray-800 text-gray-400 whitespace-nowrap">{row.before}</td>
-                      <td className="p-4 border-b border-gray-800 text-white whitespace-nowrap">{row.after}</td>
+                      <td className="p-2 sm:p-4 border-b border-gray-800 font-medium whitespace-nowrap text-[10px] sm:text-base">{row.aspect}</td>
+                      <td className="p-2 sm:p-4 border-b border-gray-800 text-gray-400 whitespace-nowrap text-[10px] sm:text-base">{row.before}</td>
+                      <td className="p-2 sm:p-4 border-b border-gray-800 text-white whitespace-nowrap text-[10px] sm:text-base">{row.after}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+            <style>
+              {`
+                @media (max-width: 480px) {
+                  #pricing table {
+                    font-size: 11px !important;
+                  }
+                  #pricing th, #pricing td {
+                    padding: 6px 2px !important;
+                  }
+                }
+              `}
+            </style>
           </div>
         </div>
       </Container>
@@ -131,3 +140,4 @@ const PricingSection: React.FC = () => {
 };
 
 export default PricingSection;
+
