@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Container from '../components/Container';
 import Button from '../components/Button';
@@ -32,9 +33,9 @@ const HeroSection: React.FC = () => {
             <p className="text-xl text-gray-300 mb-8">
               O FlyZap atende, agenda, responde e fideliza seus clientes automaticamente.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 relative z-20">
               <Button size="lg">Quero testar o FlyZap</Button>
-              <Button variant="outline" size="lg" className="py-0 my-0 mx-0">Agendar demonstração</Button>
+              <Button variant="outline" size="lg">Agendar demonstração</Button>
             </div>
           </div>
           
