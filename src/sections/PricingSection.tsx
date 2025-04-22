@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Container from '../components/Container';
 import SectionHeading from '../components/SectionHeading';
@@ -140,4 +139,3 @@ const PricingSection: React.FC = () => {
 };
 
 export default PricingSection;
-
