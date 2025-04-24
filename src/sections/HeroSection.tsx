@@ -20,30 +20,28 @@ const HeroSection: React.FC = () => {
       
       {/* Animated gradient background */}
       <div className="absolute top-0 left-0 right-0 h-1/2 z-0">
-        <div className="absolute top-0 right-0 w-full h-full bg-flyzap-green/5 blur-3xl rounded-full animate-float"></div>
-        <div className="absolute bottom-0 left-0 w-3/4 h-full bg-flyzap-green/10 blur-3xl rounded-full transform -translate-x-1/4 animate-float" style={{
-        animationDelay: '2s'
-      }}></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-flyzap-green/5 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-3/4 h-full bg-flyzap-green/10 blur-3xl rounded-full transform -translate-x-1/4"></div>
       </div>
       
       <Container className="relative z-10 mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col items-start animate-fade-in-up">
-            <h1 className="heading-xl mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="flex flex-col items-start">
+            <h1 className="heading-xl mb-6">
               Automatize seu atendimento com <span className="gradient-text">IA</span> e aumente suas vendas
             </h1>
-            <p className="text-xl text-gray-300 mb-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <p className="text-xl text-gray-300 mb-8">
               O FlyZap atende, agenda, responde e fideliza seus clientes automaticamente.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 relative z-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              <Button size="lg" className="transition-transform hover:scale-105 duration-300">Quero testar o FlyZap</Button>
-              <Button variant="outline" size="lg" className="transition-transform hover:scale-105 duration-300">Agendar demonstração</Button>
+            <div className="flex flex-col sm:flex-row gap-4 relative z-20">
+              <Button size="lg">Quero testar o FlyZap</Button>
+              <Button variant="outline" size="lg">Agendar demonstração</Button>
             </div>
           </div>
           
           <div className="relative">
-            <div className="relative w-full aspect-square sm:aspect-auto sm:h-[500px] animate-float">
-              <div className="absolute top-0 left-0 w-3/4 h-[320px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform rotate-6 hover:rotate-3 transition-all duration-500 hover:scale-105 z-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="relative w-full aspect-square sm:aspect-auto sm:h-[500px]">
+              <div className="absolute top-0 left-0 w-3/4 h-[320px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform rotate-6 z-0">
                 <div className="w-full h-10 bg-gray-900 flex items-center px-4">
                   <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
@@ -74,7 +72,7 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
               
-              <div className="absolute bottom-0 right-0 w-3/5 h-[420px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform -rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105 z-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <div className="absolute bottom-0 right-0 w-3/5 h-[420px] bg-flyzap-black-light border border-gray-800 rounded-xl shadow-2xl overflow-hidden transform -rotate-3 z-0">
                 <div className="w-full h-12 bg-gray-900 flex items-center px-[16px] mx-0 my-0 py-0">
                   <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
@@ -120,17 +118,15 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
               
-              <div className="absolute top-1/4 right-1/4 w-6 h-6 rounded-full bg-flyzap-green blur-sm animate-pulse"></div>
-              <div className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-flyzap-green/50 blur-sm animate-pulse" style={{
-                animationDelay: '1s'
-              }}></div>
+              <div className="absolute top-1/4 right-1/4 w-6 h-6 rounded-full bg-flyzap-green blur-sm"></div>
+              <div className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-flyzap-green/50 blur-sm"></div>
             </div>
 
-            <div className="absolute inset-0 bg-flyzap-green/5 blur-3xl rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute inset-0 bg-flyzap-green/5 blur-3xl rounded-full"></div>
           </div>
         </div>
         
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer hover:scale-110 transition-transform" onClick={scrollToNextSection}>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer" onClick={scrollToNextSection}>
           <span className="text-gray-400 text-sm mb-2">Saiba mais</span>
           <ArrowDown className="text-flyzap-green" />
         </div>
