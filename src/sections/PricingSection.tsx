@@ -3,6 +3,7 @@ import Container from '../components/Container';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
 import { Check } from 'lucide-react';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const PricingSection: React.FC = () => {
   return (
@@ -59,78 +60,58 @@ const PricingSection: React.FC = () => {
             </div>
           </div>
           
-          {/* Comparison table */}
+          {/* Comparison table with improved mobile responsiveness */}
           <div className="mt-16">
-            <h3 className="text-xl font-semibold mb-6 text-center px-6">Comparativo: Antes x Depois do FlyZap</h3>
+            <h3 className="text-xl font-semibold mb-6 text-center">Comparativo: Antes x Depois do FlyZap</h3>
             
-            {/* Responsivo: SEM rolagem horizontal, ajusta a tabela para caber */}
-            <div
-              className="
-                w-full
-                border border-gray-800
-                rounded-xl
-                bg-flyzap-black-light
-                overflow-hidden
-                max-w-full
-              "
-            >
-              <table className="w-full text-base sm:text-base text-sm [font-variant-numeric:proportional-nums]">
-                <thead>
-                  <tr>
-                    <th className="p-2 sm:p-4 text-left border-b border-gray-800 bg-flyzap-black-light w-1/3 text-xs sm:text-base"></th>
-                    <th className="p-2 sm:p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-gray-400 w-1/3 text-xs sm:text-base">Antes (Atendimento Tradicional)</th>
-                    <th className="p-2 sm:p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-flyzap-green w-1/3 text-xs sm:text-base">Depois (Com FlyZap)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    {
-                      aspect: 'Disponibilidade',
-                      before: 'Limitada ao horário comercial',
-                      after: 'Atendimento 24/7, todos os dias'
-                    },
-                    {
-                      aspect: 'Tempo de resposta',
-                      before: '30 minutos a várias horas',
-                      after: 'Instantâneo (menos de 5 segundos)'
-                    },
-                    {
-                      aspect: 'Capacidade de atendimento',
-                      before: 'Limitada à equipe disponível',
-                      after: 'Ilimitada, sem fila de espera'
-                    },
-                    {
-                      aspect: 'Qualidade de atendimento',
-                      before: 'Variável, depende do operador',
-                      after: 'Consistente e personalizada'
-                    },
-                    {
-                      aspect: 'Custo mensal',
-                      before: 'R$ 2.000+ (salário + encargos)',
-                      after: 'R$ 97/mês (plano completo)'
-                    }
-                  ].map((row, index) => (
-                    <tr key={index} className={index % 2 === 0 ? 'bg-flyzap-black-light/30' : ''}>
-                      <td className="p-2 sm:p-4 border-b border-gray-800 font-medium whitespace-nowrap text-[10px] sm:text-base">{row.aspect}</td>
-                      <td className="p-2 sm:p-4 border-b border-gray-800 text-gray-400 whitespace-nowrap text-[10px] sm:text-base">{row.before}</td>
-                      <td className="p-2 sm:p-4 border-b border-gray-800 text-white whitespace-nowrap text-[10px] sm:text-base">{row.after}</td>
+            <ScrollArea className="w-full rounded-xl border border-gray-800 bg-flyzap-black-light">
+              <div className="min-w-[600px]">
+                <table className="w-full">
+                  <thead>
+                    <tr>
+                      <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light w-1/3"></th>
+                      <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-gray-400 w-1/3">Antes (Atendimento Tradicional)</th>
+                      <th className="p-4 text-left border-b border-gray-800 bg-flyzap-black-light text-flyzap-green w-1/3">Depois (Com FlyZap)</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <style>
-              {`
-                @media (max-width: 480px) {
-                  #pricing table {
-                    font-size: 11px !important;
-                  }
-                  #pricing th, #pricing td {
-                    padding: 6px 2px !important;
-                  }
-                }
-              `}
-            </style>
+                  </thead>
+                  <tbody>
+                    {[
+                      {
+                        aspect: 'Disponibilidade',
+                        before: 'Limitada ao horário comercial',
+                        after: 'Atendimento 24/7, todos os dias'
+                      },
+                      {
+                        aspect: 'Tempo de resposta',
+                        before: '30 minutos a várias horas',
+                        after: 'Instantâneo (menos de 5 segundos)'
+                      },
+                      {
+                        aspect: 'Capacidade de atendimento',
+                        before: 'Limitada à equipe disponível',
+                        after: 'Ilimitada, sem fila de espera'
+                      },
+                      {
+                        aspect: 'Qualidade de atendimento',
+                        before: 'Variável, depende do operador',
+                        after: 'Consistente e personalizada'
+                      },
+                      {
+                        aspect: 'Custo mensal',
+                        before: 'R$ 2.000+ (salário + encargos)',
+                        after: 'R$ 97/mês (plano completo)'
+                      }
+                    ].map((row, index) => (
+                      <tr key={index} className={index % 2 === 0 ? 'bg-flyzap-black-light/30' : ''}>
+                        <td className="p-4 border-b border-gray-800 font-medium">{row.aspect}</td>
+                        <td className="p-4 border-b border-gray-800 text-gray-400">{row.before}</td>
+                        <td className="p-4 border-b border-gray-800 text-white">{row.after}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </ScrollArea>
           </div>
         </div>
       </Container>
