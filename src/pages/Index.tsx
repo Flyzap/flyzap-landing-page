@@ -1,6 +1,5 @@
 
 import React from 'react';
-import NavBar from '../components/NavBar';
 import HeroSection from '../sections/HeroSection';
 import FeaturesSection from '../sections/FeaturesSection';
 import HowItWorksSection from '../sections/HowItWorksSection';
@@ -15,7 +14,6 @@ import Footer from '../components/Footer';
 const Index: React.FC = () => {
   return (
     <div className="min-h-screen bg-flyzap-black">
-      <NavBar />
       <HeroSection />
       <FeaturesSection />
       <HowItWorksSection />
