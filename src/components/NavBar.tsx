@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Rocket, PlayCircle, MessageSquare, CreditCard } from 'lucide-react';
+import { Menu, X, Home, Rocket, PlayCircle, MessageSquare, CreditCard, MessageSquareText } from 'lucide-react';
 import Container from './Container';
 import Logo from './Logo';
 import Button from './Button';
@@ -25,11 +24,14 @@ const NavBar: React.FC = () => {
 
   const handleNavClick = (href: string) => {
     setShowOverlay(true);
-    // Reset overlay after navigation
     setTimeout(() => {
       setShowOverlay(false);
     }, 500);
     window.location.href = href;
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/5511999999999', '_blank');
   };
 
   const menuItems = [
@@ -90,9 +92,8 @@ const NavBar: React.FC = () => {
           </div>
         </Container>
         
-        {/* Mobile menu */}
         <div 
-          className={`md:hidden fixed inset-0 bg-flyzap-black/98 backdrop-blur-md z-40 transition-transform duration-300 transform ${
+          className={`md:hidden fixed inset-0 bg-flyzap-black/90 backdrop-blur-md z-40 transition-transform duration-300 transform ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -132,12 +133,19 @@ const NavBar: React.FC = () => {
         </div>
       </header>
 
-      {/* Navigation overlay */}
       <div 
-        className={`fixed inset-0 bg-flyzap-black z-[60] transition-opacity duration-500 ${
+        className={`fixed inset-0 bg-flyzap-black/80 backdrop-blur-sm z-[60] transition-opacity duration-500 ${
           showOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       />
+
+      <button
+        onClick={handleWhatsAppClick}
+        className="fixed bottom-6 right-6 z-[70] bg-[#25D366] hover:bg-[#20BD5A] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+        aria-label="Contato WhatsApp"
+      >
+        <MessageSquareText size={24} />
+      </button>
     </>
   );
 };
