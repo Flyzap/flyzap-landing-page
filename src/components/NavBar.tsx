@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Rocket, PlayCircle, MessageSquare, CreditCard, MessageSquareText } from 'lucide-react';
+import { Menu, X, Home, Rocket, Users, MessageSquare, Phone, LogIn, Calendar } from 'lucide-react';
 import Container from './Container';
 import Logo from './Logo';
 import Button from './Button';
@@ -35,25 +36,25 @@ const NavBar: React.FC = () => {
   };
 
   const menuItems = [
-    { href: "#features", label: "Benefícios", icon: <Rocket size={20} /> },
-    { href: "#how-it-works", label: "Como Funciona", icon: <Home size={20} /> },
-    { href: "#demo", label: "Demo", icon: <PlayCircle size={20} /> },
-    { href: "#testimonials", label: "Depoimentos", icon: <MessageSquare size={20} /> },
-    { href: "#pricing", label: "Preços", icon: <CreditCard size={20} /> },
+    { href: "#inicio", label: "Início", icon: <Home size={20} /> },
+    { href: "#funcionalidades", label: "Funcionalidades", icon: <Rocket size={20} /> },
+    { href: "#planos", label: "Planos", icon: <Calendar size={20} /> },
+    { href: "#depoimentos", label: "Depoimentos", icon: <MessageSquare size={20} /> },
+    { href: "#contato", label: "Contato", icon: <Phone size={20} /> },
   ];
 
   return (
     <>
       <header 
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-flyzap-black/95 backdrop-blur-sm py-3 shadow-lg' : 'bg-transparent backdrop-blur-sm bg-flyzap-black/50 py-5'
+        className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-sm ${
+          isScrolled ? 'bg-flyzap-black/95 py-3 shadow-lg' : 'bg-flyzap-black/50 py-5'
         }`}
       >
         <Container>
           <div className="flex items-center justify-between">
             <Logo className="z-50" />
             
-            <nav className="hidden md:flex items-center space-x-12">
+            <nav className="hidden md:flex items-center space-x-8">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
@@ -70,18 +71,17 @@ const NavBar: React.FC = () => {
                   <span className="font-medium tracking-wide">{item.label}</span>
                 </a>
               ))}
-            </nav>
-            
-            <div className="hidden md:block">
+              
               <Button 
-                variant="primary"
+                variant="outline"
                 size="md"
-                className="shadow-lg hover:shadow-flyzap-green/20"
-                onClick={() => handleNavClick("#contact")}
+                className="flex items-center gap-2"
+                onClick={() => handleNavClick("/login")}
               >
-                Quero testar o FlyZap
+                <LogIn size={18} />
+                <span>Login</span>
               </Button>
-            </div>
+            </nav>
             
             <button 
               className="md:hidden z-50 text-flyzap-green hover:text-flyzap-green-light transition-colors"
@@ -114,21 +114,20 @@ const NavBar: React.FC = () => {
                   <span className="text-lg font-medium">{item.label}</span>
                 </a>
               ))}
-            </nav>
-            
-            <div className="mt-auto">
+              
               <Button 
-                variant="primary"
-                size="lg"
-                className="w-full shadow-lg hover:shadow-flyzap-green/20"
+                variant="outline"
+                size="md"
+                className="flex items-center gap-2 w-full justify-center"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleNavClick("#contact");
+                  handleNavClick("/login");
                 }}
               >
-                Quero testar o FlyZap
+                <LogIn size={18} />
+                <span>Login</span>
               </Button>
-            </div>
+            </nav>
           </Container>
         </div>
       </header>
@@ -144,7 +143,7 @@ const NavBar: React.FC = () => {
         className="fixed bottom-6 right-6 z-[70] bg-[#25D366] hover:bg-[#20BD5A] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
         aria-label="Contato WhatsApp"
       >
-        <MessageSquareText size={24} />
+        <MessageSquare size={24} />
       </button>
     </>
   );
