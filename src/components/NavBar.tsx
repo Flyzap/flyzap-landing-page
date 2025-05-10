@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Rocket, CreditCard, MessageSquare, User, Mail, MessageSquareText } from 'lucide-react';
+import { Menu, X, MessageSquareText } from 'lucide-react';
 import Container from './Container';
 import Logo from './Logo';
 import Button from './Button';
@@ -55,51 +55,57 @@ const NavBar: React.FC = () => {
     <>
       <header 
         className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-flyzap-black/95 backdrop-blur-sm py-3 shadow-lg' : 'bg-transparent backdrop-blur-sm bg-flyzap-black/50 py-5'
+          isScrolled ? 'bg-flyzap-black/95 backdrop-blur-sm py-3 shadow-lg' : 'bg-transparent backdrop-blur-sm bg-flyzap-black/50 py-4'
         }`}
       >
         <Container>
           <div className="flex items-center justify-between">
+            {/* Logo */}
             <Logo className="z-50" />
             
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
-              {menuItems.map((item) => (
+            <nav className="hidden md:flex items-center justify-between flex-1">
+              {/* Main Menu Items */}
+              <ul className="flex items-center ml-6 gap-8">
+                {menuItems.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(item.href);
+                      }}
+                      href={item.href}
+                      className="font-medium text-gray-300 hover:text-flyzap-green transition-colors duration-200"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Auth and CTA */}
+              <div className="flex items-center">
                 <a
-                  key={item.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick(item.href);
+                    handleLoginClick();
                   }}
-                  href={item.href}
-                  className="group flex items-center space-x-2 text-gray-300 hover:text-flyzap-green transition-colors duration-200"
+                  href="#login"
+                  className="font-medium text-flyzap-green hover:text-flyzap-green-light transition-colors duration-200 ml-12"
                 >
-                  <span className="font-medium tracking-wide">{item.label}</span>
+                  Login
                 </a>
-              ))}
-              
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLoginClick();
-                }}
-                href="#login"
-                className="font-medium text-flyzap-green hover:text-flyzap-green-light transition-colors duration-200"
-              >
-                Login
-              </a>
+                
+                <Button 
+                  variant="primary"
+                  size="md"
+                  className="ml-6 shadow-lg hover:shadow-flyzap-green/20 rounded-[10px] px-5 py-[10px]"
+                  onClick={() => handleNavClick("#demo")}
+                >
+                  Agendar demonstração gratuita
+                </Button>
+              </div>
             </nav>
-            
-            <div className="hidden md:block">
-              <Button 
-                variant="primary"
-                size="md"
-                className="shadow-lg hover:shadow-flyzap-green/20"
-                onClick={() => handleNavClick("#demo")}
-              >
-                Agendar demonstração gratuita
-              </Button>
-            </div>
             
             {/* Mobile Menu Toggle */}
             <button 
@@ -128,9 +134,9 @@ const NavBar: React.FC = () => {
                     handleNavClick(item.href);
                   }}
                   href={item.href}
-                  className="flex items-center space-x-3 text-gray-300 hover:text-flyzap-green transition-colors duration-200"
+                  className="text-lg font-medium text-gray-300 hover:text-flyzap-green transition-colors duration-200"
                 >
-                  <span className="text-lg font-medium">{item.label}</span>
+                  {item.label}
                 </a>
               ))}
               
@@ -141,9 +147,9 @@ const NavBar: React.FC = () => {
                   handleLoginClick();
                 }}
                 href="#login"
-                className="flex items-center space-x-3"
+                className="text-lg font-medium text-flyzap-green"
               >
-                <span className="text-lg font-medium text-flyzap-green">Login</span>
+                Login
               </a>
             </nav>
             
@@ -151,7 +157,7 @@ const NavBar: React.FC = () => {
               <Button 
                 variant="primary"
                 size="lg"
-                className="w-full shadow-lg hover:shadow-flyzap-green/20"
+                className="w-full shadow-lg hover:shadow-flyzap-green/20 rounded-[10px] px-5 py-[10px]"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   handleNavClick("#demo");
