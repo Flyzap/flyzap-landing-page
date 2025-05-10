@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -35,7 +34,7 @@
     --input: 0 0% 15%;
     --ring: 157 100% 50%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -55,7 +54,6 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
   }
 
   body {
