@@ -5,12 +5,14 @@ import Container from './Container';
 import Logo from './Logo';
 import Button from './Button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,12 +39,16 @@ const NavBar: React.FC = () => {
     window.open('https://wa.me/5582999265353', '_blank');
   };
 
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   const menuItems = [
-    { href: "#features", label: "Funcionalidades", icon: <Rocket size={20} /> },
-    { href: "#how-it-works", label: "Como Funciona", icon: <Home size={20} /> },
-    { href: "#pricing", label: "Planos", icon: <CreditCard size={20} /> },
-    { href: "#testimonials", label: "Depoimentos", icon: <MessageSquare size={20} /> },
-    { href: "#contact", label: "Contato", icon: <Mail size={20} /> },
+    { href: "#features", label: "Funcionalidades" },
+    { href: "#how-it-works", label: "Como Funciona" },
+    { href: "#pricing", label: "Planos" },
+    { href: "#testimonials", label: "Depoimentos" },
+    { href: "#contact", label: "Contato" },
   ];
 
   return (
@@ -75,7 +81,7 @@ const NavBar: React.FC = () => {
               <a
                 onClick={(e) => {
                   e.preventDefault();
-                  handleNavClick("#login");
+                  handleLoginClick();
                 }}
                 href="#login"
                 className="font-medium text-flyzap-green hover:text-flyzap-green-light transition-colors duration-200"
@@ -124,7 +130,6 @@ const NavBar: React.FC = () => {
                   href={item.href}
                   className="flex items-center space-x-3 text-gray-300 hover:text-flyzap-green transition-colors duration-200"
                 >
-                  <span className="text-flyzap-green/70">{item.icon}</span>
                   <span className="text-lg font-medium">{item.label}</span>
                 </a>
               ))}
@@ -133,14 +138,11 @@ const NavBar: React.FC = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   setMobileMenuOpen(false);
-                  handleNavClick("#login");
+                  handleLoginClick();
                 }}
                 href="#login"
                 className="flex items-center space-x-3"
               >
-                <span className="text-flyzap-green/70">
-                  <User size={20} />
-                </span>
                 <span className="text-lg font-medium text-flyzap-green">Login</span>
               </a>
             </nav>
