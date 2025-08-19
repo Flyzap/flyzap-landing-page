@@ -8,7 +8,7 @@ const DemoSection: React.FC = () => {
   const handleVideoPlay = () => {
     setIsVideoPlaying(true);
   };
-  return <section id="demo" className="section-padding bg-flyzap-black py-20">
+  return <section id="demo" className="section-padding bg-flyzap-black py-20 lg:py-24 xl:py-28">
       <Container>
         <SectionHeading title="Veja o FlyZap em ação" subtitle="Assista a uma demonstração de como o FlyZap trabalha para transformar seu atendimento e aumentar suas vendas." centered />
         
@@ -40,17 +40,17 @@ const DemoSection: React.FC = () => {
         
         {/* CTA buttons */}
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="sm:px-8" onClick={handleVideoPlay}>
+          <Button size="lg" className="sm:px-8 min-h-[48px]" onClick={handleVideoPlay}>
             <Play size={16} className="mr-2" />
             Assistir em ação
           </Button>
-          <Button variant="outline" size="lg" className="sm:px-8">
+          <Button variant="outline" size="lg" className="sm:px-8 min-h-[48px]">
             Agendar demonstração
           </Button>
         </div>
         
         {/* Device mockups below */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 md:order-1">
             <h3 className="text-2xl font-bold mb-4">Atendimento inteligente em múltiplos canais</h3>
             <p className="text-gray-300 mb-6">O FlyZap integra-se perfeitamente com WhatsApp, Instagram e seu site para oferecer uma experiência contínua para seus clientes, independentemente do canal que eles escolherem.</p>
@@ -67,7 +67,7 @@ const DemoSection: React.FC = () => {
           
           <div className="order-1 md:order-2 relative">
             {/* Phone mockup */}
-            <div className="relative mx-auto w-[280px] h-[580px] bg-gray-900 rounded-[3rem] border-[14px] border-gray-800 shadow-xl overflow-hidden">
+            <div className="relative mx-auto w-[240px] sm:w-[280px] h-[480px] sm:h-[580px] bg-gray-900 rounded-[2rem] sm:rounded-[3rem] border-[8px] sm:border-[14px] border-gray-800 shadow-xl overflow-hidden">
               {/* Phone interior */}
               <div className="absolute top-0 w-full h-6 bg-gray-800 flex justify-center items-center">
                 <div className="w-20 h-4 bg-gray-900 rounded-b-lg"></div>

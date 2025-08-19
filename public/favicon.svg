@@ -1,18 +1,6 @@
-
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#121212"/>
-  <path d="M8 12H14C16.2091 12 18 13.7909 18 16V16C18 18.2091 16.2091 20 14 20H8V12Z" fill="#00FF87"/>
-  <path d="M14 12H24V16C24 18.2091 22.2091 20 20 20H14V12Z" fill="url(#paint0_linear)"/>
-  <path d="M8 20H14L18 24H12L8 20Z" fill="#00FF87"/>
-  <path d="M14 20H20L24 24H18L14 20Z" fill="url(#paint1_linear)"/>
-  <defs>
-    <linearGradient id="paint0_linear" x1="14" y1="16" x2="24" y2="16" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#00FF87"/>
-      <stop offset="1" stop-color="#33FF9F"/>
-    </linearGradient>
-    <linearGradient id="paint1_linear" x1="14" y1="22" x2="24" y2="22" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#00FF87"/>
-      <stop offset="1" stop-color="#33FF9F"/>
-    </linearGradient>
-  </defs>
+  <rect width="32" height="32" rx="4" fill="#ffffff"/>
+  <path d="M8 16L16 8L24 16L20 16L20 20L16 24L12 20L12 16Z" fill="#7CB342"/>
+  <path d="M16 8L20 12L16 16L12 12Z" fill="#8BC34A"/>
+  <circle cx="18" cy="14" r="1.5" fill="#ffffff"/>
 </svg>

@@ -40,7 +40,7 @@ const NavBar: React.FC = () => {
   };
 
   const handleLoginClick = () => {
-    navigate('/login');
+    window.location.href = 'https://app.flyzap.tech/login';
   };
 
   const menuItems = [
@@ -55,7 +55,7 @@ const NavBar: React.FC = () => {
     <>
       <header 
         className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-flyzap-black/95 backdrop-blur-sm py-3 shadow-lg' : 'bg-transparent backdrop-blur-sm bg-flyzap-black/50 py-4'
+          isScrolled ? 'bg-flyzap-black/95 backdrop-blur-sm py-4 shadow-lg' : 'bg-transparent backdrop-blur-sm bg-flyzap-black/50 py-6'
         }`}
       >
         <Container>
@@ -66,7 +66,7 @@ const NavBar: React.FC = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center justify-between flex-1">
               {/* Main Menu Items */}
-              <ul className="flex items-center ml-6 gap-8">
+              <ul className="flex items-center ml-8 lg:ml-12 xl:ml-16 gap-8 lg:gap-10 xl:gap-12">
                 {menuItems.map((item) => (
                   <li key={item.href}>
                     <a
@@ -75,7 +75,7 @@ const NavBar: React.FC = () => {
                         handleNavClick(item.href);
                       }}
                       href={item.href}
-                      className="font-medium text-gray-300 hover:text-flyzap-green transition-colors duration-200"
+                      className="font-medium text-gray-300 hover:text-flyzap-green transition-colors duration-200 text-sm lg:text-base relative after:absolute after:w-0 after:h-0.5 after:bg-flyzap-green after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
                     >
                       {item.label}
                     </a>
@@ -91,19 +91,10 @@ const NavBar: React.FC = () => {
                     handleLoginClick();
                   }}
                   href="#login"
-                  className="font-medium text-flyzap-green hover:text-flyzap-green-light transition-colors duration-200 ml-12"
+                  className="font-medium text-flyzap-green hover:text-flyzap-green-light transition-colors duration-200 text-sm lg:text-base px-4 py-2 rounded-lg hover:bg-flyzap-green/10 transition-all duration-200"
                 >
                   Login
                 </a>
-                
-                <Button 
-                  variant="primary"
-                  size="md"
-                  className="ml-6 shadow-lg hover:shadow-flyzap-green/20 rounded-[10px] px-5 py-[10px]"
-                  onClick={() => handleNavClick("#demo")}
-                >
-                  Agendar demonstração gratuita
-                </Button>
               </div>
             </nav>
             
@@ -123,8 +114,8 @@ const NavBar: React.FC = () => {
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <Container className="pt-24 pb-8 h-full flex flex-col">
-            <nav className="flex flex-col space-y-8">
+          <Container className="pt-28 pb-12 h-full flex flex-col">
+            <nav className="flex flex-col space-y-6">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
@@ -134,38 +125,28 @@ const NavBar: React.FC = () => {
                     handleNavClick(item.href);
                   }}
                   href={item.href}
-                  className="text-lg font-medium text-gray-300 hover:text-flyzap-green transition-colors duration-200"
+                  className="text-xl font-medium text-gray-300 hover:text-flyzap-green transition-colors duration-200 py-3 px-4 rounded-lg hover:bg-flyzap-green/10"
                 >
                   {item.label}
                 </a>
               ))}
               
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMobileMenuOpen(false);
-                  handleLoginClick();
-                }}
-                href="#login"
-                className="text-lg font-medium text-flyzap-green"
-              >
-                Login
-              </a>
+              <div className="border-t border-gray-700 pt-6 mt-4">
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileMenuOpen(false);
+                    handleLoginClick();
+                  }}
+                  href="#login"
+                  className="text-xl font-medium text-flyzap-green py-3 px-4 rounded-lg hover:bg-flyzap-green/10 transition-all duration-200 block"
+                >
+                  Login
+                </a>
+              </div>
             </nav>
             
-            <div className="mt-auto">
-              <Button 
-                variant="primary"
-                size="lg"
-                className="w-full shadow-lg hover:shadow-flyzap-green/20 rounded-[10px] px-5 py-[10px]"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleNavClick("#demo");
-                }}
-              >
-                Agendar demonstração
-              </Button>
-            </div>
+
           </Container>
         </div>
       </header>

@@ -24,7 +24,7 @@ const HowItWorksSection: React.FC = () => {
   ];
 
   return (
-    <section id="how-it-works" className="section-padding bg-flyzap-black-light py-20">
+    <section id="how-it-works" className="section-padding bg-flyzap-black-light py-20 lg:py-24 xl:py-28">
       <Container>
         <SectionHeading 
           title="Como funciona"
@@ -34,16 +34,16 @@ const HowItWorksSection: React.FC = () => {
         />
         
         <div className="relative mt-16">
-          {/* Connecting line */}
-          <div className="absolute top-6 left-6 h-[calc(100%-24px)] w-px bg-gradient-to-b from-flyzap-green/80 to-flyzap-green/0 hidden md:block"></div>
+          {/* Connecting line - only visible on large screens */}
+          <div className="absolute top-6 left-6 h-[calc(100%-24px)] w-px bg-gradient-to-b from-flyzap-green/80 to-flyzap-green/0 hidden lg:block"></div>
           
-          <div className="space-y-16 md:space-y-24 relative">
+          <div className="space-y-12 md:space-y-16 lg:space-y-28 xl:space-y-32 relative">
             {steps.map((step, index) => (
               <div 
                 key={index} 
-                className={`flex flex-col md:flex-row ${
-                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                } items-center gap-8 md:gap-16`}
+                className={`flex flex-col lg:flex-row ${
+                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                } items-center gap-6 md:gap-8 lg:gap-20 xl:gap-24`}
               >
                 <div className="w-full md:w-1/2 animate-fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
                   <StepCard
@@ -53,7 +53,7 @@ const HowItWorksSection: React.FC = () => {
                   />
                 </div>
                 
-                <div className="w-full md:w-1/2 bg-flyzap-black rounded-xl border border-gray-800 p-4 h-64 flex items-center justify-center animate-fade-in-up" style={{ animationDelay: `${(index * 0.2) + 0.1}s` }}>
+                <div className="w-full md:w-1/2 bg-flyzap-black rounded-xl border border-gray-800 p-4 lg:p-6 h-64 lg:h-80 xl:h-96 flex items-center justify-center animate-fade-in-up hover:border-flyzap-green/30 transition-all duration-300" style={{ animationDelay: `${(index * 0.2) + 0.1}s` }}>
                   {index === 0 && (
                     <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
                       <div className="bg-flyzap-black-light rounded-lg p-3 border border-gray-800 hover:border-flyzap-green/50 transition-colors">

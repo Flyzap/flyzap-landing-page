@@ -33,7 +33,7 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section id="testimonials" className="section-padding bg-flyzap-black-light py-20">
+    <section id="testimonials" className="section-padding bg-flyzap-black-light py-20 lg:py-24 xl:py-28">
       <Container>
         <SectionHeading 
           title="O que nossos clientes dizem"
@@ -41,7 +41,7 @@ const TestimonialsSection: React.FC = () => {
           centered
         />
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}
@@ -58,7 +58,7 @@ const TestimonialsSection: React.FC = () => {
         </div>
         
         {/* Testimonial metrics */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 xl:gap-8 text-center">
           {[
             { metric: '98%', label: 'Satisfação de clientes' },
             { metric: '45%', label: 'Aumento médio em vendas' },

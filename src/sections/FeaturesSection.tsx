@@ -30,7 +30,7 @@ const FeaturesSection: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="section-padding bg-gradient-to-b from-flyzap-black to-flyzap-black-light py-20">
+    <section id="features" className="section-padding bg-gradient-to-b from-flyzap-black to-flyzap-black-light py-20 lg:py-24 xl:py-28">
       <Container>
         <SectionHeading 
           title="Benefícios que transformam seu atendimento"
@@ -39,14 +39,14 @@ const FeaturesSection: React.FC = () => {
           gradient
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 xl:gap-8">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
-              className="animate-fade-in-up"
+              className="animate-fade-in-up hover:transform hover:scale-105 transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             />
           ))}
