@@ -10,5 +10,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/flyzap-landing-page/',
+  // Remove base path for Vercel deployment
+  // base: '/flyzap-landing-page/',
 })
